@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Random Stuff</title>
+        <h3>Random Thing Number 1:</h3>
+        <p>The time right now:</p>
+        <script>
+            function startTime() {
+              var today = new Date();
+              var h = today.getHours();
+              var m = today.getMinutes();
+              var s = today.getSeconds();
+              m = checkTime(m);
+              s = checkTime(s);
+              document.getElementById('txt').innerHTML =
+              h % 12 + ":" + m + ":" + s;
+              var t = setTimeout(startTime, 500);
+            }
+            function checkTime(i) {
+              if (i < 10) {i = "0" + i};
+              return i;
+            }
+            </script>
+    </head>
+<body onload="startTime()"><div id="txt"></div></body>
+</html>
