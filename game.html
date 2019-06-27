@@ -2,8 +2,25 @@
 <html>
     <head>
         <title>When You're Bored: Games</title>
-    </head>
-    <body>
+        <script>
+                function startTime() {
+                  var today = new Date();
+                  var h = today.getHours();
+                  var m = today.getMinutes();
+                  var s = today.getSeconds();
+                  m = checkTime(m);
+                  s = checkTime(s);
+                  document.getElementById('txt').innerHTML =
+                  h % 12 + ":" + m + ":" + s;
+                  var t = setTimeout(startTime, 500);
+                }
+                function checkTime(i) {
+                  if (i < 10) {i = "0" + i};
+                  return i;
+                }
+                </script>
+        </head>
+    <body onload="startTime()"><div id="txt"></div>
             <font size="+2"><a href="index.html">Home</a>
             <a href="game.html">Games</a>
             <a href="random.html">Random Stuff</a>
