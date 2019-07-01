@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html align="center">
     <head>
-        <title>When You're Bored: Education</title>
+        <title>When You're Bored: Home</title>
         <script>
                 function startTime() {
                   var today = new Date();
@@ -29,15 +29,28 @@
           <a href="https://news.google.com/?hl=en-US&gl=US&ceid=US%3Aen">News</a>
           <a href="https://www.espn.com/">Sports</a>
           <a href="restricted_entry.html">Other</a></p>
-          <img src="/web_photos/education.png" alt="Home" width="500" height="333">
+          <img src="/web_photos/lock.svg" alt="Home" width="361" height="361">
         </font>
-    <p>One thing: This page is just so that you can have an excuse to be on this website.</p>
-    <p><a href="https://www.wikipedia.org/">Wikipedia</a>
-    <a href="https://www.mathplayground.com/">Math Playground</a>
-    <a href="https://www.coolmathgames.com">Cool Math Games</a></p>
-    <p><a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw">3Blue1Brown</a>
-    <a href="https://www.calculatorsoup.com/">Calculator Soup</a></p>
-    <h3>Cool Stuff</h3>
-    <p><a href="morse_code.html">Morse Code</a></p>
-    <p><a href="geodes.html">Geodes</a></p>
+        <p>This is a restricted section of the website. Please enter the password I gave you.</p>
+        <input id="numb">
+        <button type="button" onclick="myFunction()">Submit</button>
+<p id="valid"></p>
+
+<script>
+function myFunction() {
+  var x, text;
+
+  // Get the value of the input field with id="numb"
+  x = document.getElementById("numb").value;
+
+  // If x is Not a Number or less than one or greater than 10
+  if (x != 0689749161707470) {
+    text = "Wrong password.";
+  } else {
+    text = "Here is the link: luomic001.github.io/0689749161707470.html";
+  }
+  document.getElementById("valid").innerHTML = text;
+}
+</script>
+    </body>
 </html>
