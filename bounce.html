@@ -1,5 +1,35 @@
 <!DOCTYPE html>
 <html align="center">
+    <head>
+        <p><button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">ACCELERATE UP</button></p>
+        <title>When You're Bored: Education</title>
+        <script>
+                function startTime() {
+                  var today = new Date();
+                  var h = today.getHours();
+                  var m = today.getMinutes();
+                  var s = today.getSeconds();
+                  m = checkTime(m);
+                  s = checkTime(s);
+                  document.getElementById('txt').innerHTML =
+                  h % 12 + ":" + m + ":" + s;
+                  var t = setTimeout(startTime, 500);
+                }
+                function checkTime(i) {
+                  if (i < 10) {i = "0" + i};
+                  return i;
+                }
+                </script>
+        <font size="+2">
+          <p><a href="index.html">Home</a>
+          <a href="game.html">Games</a>
+          <a href="music.html">Music</a>
+          <a href="education.html">Education</a>
+          <a href="https://news.google.com/?hl=en-US&gl=US&ceid=US%3Aen">News</a>
+          <a href="https://www.espn.com/">Sports</a>
+          <a href="restricted_entry.html">Other</a></p>
+          <img src="/web_photos/bounce.gif" alt="" width="500" height="333">
+        </font>
 <head>
 <title>When You're Bored: Bounce Game</title>
 <h2>Play Bounce Game!</h2>
@@ -12,7 +42,7 @@ canvas {
 }
 </style>
 </head>
-<body onload="startGame()">
+<body onload="startGame()" onload="startTime()"><div id="txt"></div>
 <script>
 
 var myGamePiece;
@@ -133,8 +163,5 @@ function accelerate(n) {
 }
 </script>
 <br>
-<button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">ACCELERATE</button>
-<p>Use the ACCELERATE button to stay in the air</p>
-<p>How long can you stay alive?</p>
 </body>
 </html>
