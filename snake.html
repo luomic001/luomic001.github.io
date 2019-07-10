@@ -1,7 +1,37 @@
 <html>
-    <head><title></title></head>
-    <body>
+    <head><title>When You're Bored: Snake game</title>
+        <script>
+            function startTime() {
+           var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML =
+            h % 12 + ":" + m + ":" + s;
+            var t = setTimeout(startTime, 500);
+            }
+            function checkTime(i) {
+            if (i < 10) {i = "0" + i};
+            return i;
+            }
+        </script>
+    </head>
+        <body onload="startTime()"><div id="txt"></div>
+            <font size="+2">
+            <p><a href="index.html">Home</a>
+            <a href="game.html">Games</a>
+            <a href="music.html">Music</a>
+            <a href="education.html">Education</a>
+            <a href="https://news.google.com/?hl=en-US&gl=US&ceid=US%3Aen">News</a>
+            <a href="https://www.espn.com/">Sports</a>
+            <a href="restricted_entry.html">Other</a></p>
+            <img src="/web_photos/snake.jpg" alt="" width="500" height="333">
+            </font>
+        <body>
     <h2><font size="+2">Play Snake!</font></h2>
     <canvas id="c" width="1000" height="1000" style="height: 500px; width: 500px;"></canvas>
     <script src="snake.js"></script>
-    </body></html>
+    </body>
+    </html>
