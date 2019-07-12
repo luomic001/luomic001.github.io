@@ -2,8 +2,13 @@
 <html align="center">
 <head>
         <h2>Play Flappy Bird!</h2>
-        <p>When you crash, reload to play again.</p>
         <p><button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">Flap</button></p>
+        <p><button onclick="redirect()">Restart?</button></p>
+<script>
+function redirect() {
+location.replace("bounce.html")
+}
+</script>
         <script>
                 function startTime() {
                   var today = new Date();
