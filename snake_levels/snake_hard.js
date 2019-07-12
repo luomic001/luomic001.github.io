@@ -47,7 +47,7 @@
       context.fillStyle = '#eee8d5';
       context.font = '40px serif';
       context.textAlign = 'center';
-      context.fillText('Refresh to play again', SIZE / 2, SIZE / 2);
+      context.fillText('Nice job!', SIZE / 2, SIZE / 2);
     } else {
       snake.unshift(newHead); // Add the new head to the front
       snake = snake.slice(0, snakeLength); // Enforce the snake's max length
