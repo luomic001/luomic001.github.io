@@ -21,7 +21,9 @@
                 </script>
         </head>
     <body onload="startTime()"><div id="txt"></div>
-        <h1>This game has some bugs. Go back.</h1>
+        <script>
+            var answer = Math.floor(Math.random() * 99999999) + 10000000;
+        </script>
         <font size="+2">
           <p><a href="index.html">Home</a>
           <a href="game.html">Games</a>
@@ -36,10 +38,8 @@
         <button onclick="hideDigits()">Hide digits (forever!)</button></p>
         
         <p id="demo"></p>
-        
         <script>
         function newDigits() {
-            var answer = Math.floor(Math.random() * 99999999) + 10000000;
             document.getElementById("demo").innerHTML = answer;
         }
         </script>
@@ -57,7 +57,7 @@
         function submitDigits() {
           var x, text;
           x = document.getElementById("memory").value;
-          if (x != 'answer') {
+          if (x != answer) {
             text = "Nope.";
           } else {
             text = "Correct!";
