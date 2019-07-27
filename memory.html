@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html align="center">
+    <head>
+        <title>When You're Bored: Memory Game</title>
+        <script>
+                function startTime() {
+                  var today = new Date();
+                  var h = today.getHours();
+                  var m = today.getMinutes();
+                  var s = today.getSeconds();
+                  m = checkTime(m);
+                  s = checkTime(s);
+                  document.getElementById('txt').innerHTML =
+                  h % 12 + ":" + m + ":" + s;
+                  var t = setTimeout(startTime, 500);
+                }
+                function checkTime(i) {
+                  if (i < 10) {i = "0" + i};
+                  return i;
+                }
+                </script>
+        </head>
+    <body onload="startTime()"><div id="txt"></div>
+        <h1>This game has some bugs. Go back.</h1>
+        <font size="+2">
+          <p><a href="index.html">Home</a>
+          <a href="game.html">Games</a>
+          <a href="music.html">Music</a>
+          <a href="education.html">Education</a>
+          <a href="https://news.google.com/?hl=en-US&gl=US&ceid=US%3Aen">News</a>
+          <a href="https://www.espn.com/">Sports</a>
+          <a href="restricted_entry.html">Other</a></p>
+          <img src="/web_photos/memory.jpeg" alt="" width="500" height="333">
+        </font>
+        <p><button onclick="newDigits()">Get new digits</button>
+        <button onclick="hideDigits()">Hide digits (forever!)</button></p>
+        
+        <p id="demo"></p>
+        
+        <script>
+        function newDigits() {
+            var answer = Math.floor(Math.random() * 99999999) + 10000000;
+            document.getElementById("demo").innerHTML = answer;
+        }
+        </script>
+        
+        <script>
+        function hideDigits() {
+            document.getElementById("demo").innerHTML = "Now, submit the digits you memorized.";
+        }
+        </script>
+        
+        <input id="memory">
+        <button type="button" onclick="submitDigits()">Submit</button>
+        <p id="nextRound"></p>
+        <script>
+        function submitDigits() {
+          var x, text;
+          x = document.getElementById("memory").value;
+          if (x != 'answer') {
+            text = "Nope.";
+          } else {
+            text = "Correct!";
+          }
+          document.getElementById("nextRound").innerHTML = text;
+        }
+        </script>
+        <button onclick="tryAgain()">Restart</button>
+
+        <script>
+        function tryAgain() {
+          location.replace("memory.html")
+        }
+        </script>
+        
+  </body>
+</html>
