@@ -31,7 +31,7 @@
           <a href="restricted_entry.html">Other</a></p>
           <img src="/web_photos/lock.svg" alt="" width="361" height="361">
         </font>
-        <p>This is a restricted section of the website. Please enter the password I gave you.</p>
+        <p>This is a restricted section of the website. Please enter the name of the best comic book company ever.</p>
         <input id="numb" type="password">
         <button type="button" onclick="myFunction()">Submit</button>
 <p id="valid"></p>
@@ -40,7 +40,7 @@
 function myFunction() {
   var x, text;
   x = document.getElementById("numb").value;
-  if (x != 0689749161707470) {
+  if (x != "the name of the best comic book company ever") {
     text = "Wrong password.";
   } else {
     location.replace("/restricted_section/0689749161707470.html");
